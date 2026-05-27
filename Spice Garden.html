@@ -1,0 +1,1108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SpiceGarden</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
+      rel="stylesheet"
+    />
+    <style> 
+      * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        font-family: Poppins;
+      }
+
+      body {
+        background-color: #2c1500;
+      }
+
+      .header-section {
+        width: 100%;
+        height: 10vh;
+        background-color: #2c1500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .header-section header {
+        width: 80%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto;
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      header aside {
+        width: 20%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+
+      header nav {
+        width: 60%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      aside > span {
+        font-size: 25px;
+        font-weight: 700;
+      }
+
+      aside > span:first-child {
+        color: #f39c12;
+      }
+
+      aside > span:last-child {
+        color: white;
+      }
+
+      nav ul {
+        width: 80%;
+        height: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 40px;
+      }
+
+      ul li {
+        list-style: none;
+      }
+
+      ul li a {
+        text-decoration: none;
+        color: gainsboro;
+        font-weight: 600;
+      }
+
+      ul li a:hover {
+        color: #f39c12;
+      }
+
+      nav button {
+        background-color: #c0392b;
+        border-radius: 6px;
+        color: #fff;
+        font-size: 15.2px;
+        font-weight: 600;
+        padding: 9px 22px;
+        border: 0px;
+      }
+
+      .hero-section {
+        width: 100%;
+        min-height: 75vh;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .hero-section main {
+        width: 80%;
+        /* height: 100%; */
+        display: flex;
+        align-items: center;
+        margin: auto;
+      }
+
+      main > article {
+        width: 50%;
+        /* border: 1px solid white;
+        height: 100%; */
+        padding: 30px;
+        display: inline-block;
+        /* justify-content: center;
+        align-items: center; */
+      }
+
+      main > aside {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .hamburger-section svg {
+        fill: white;
+        display: none;
+      }
+
+      main article > span {
+        width: 242px;
+        height: 34px;
+        background-color: #f39c1226;
+        border-color: #f39c124d;
+        border-radius: 20px;
+        border-style: solid;
+        border-width: 0.8px;
+        color: #f39c12;
+        display: inline-block;
+        font-size: 12.8px;
+        font-weight: 600;
+        margin: 0px 0px 20px;
+        padding: 6px 16px;
+      }
+
+      main article h1 {
+        width: 523px;
+        height: 156px;
+        color: #fff;
+        font-family: Poppins;
+        font-size: 41.6px;
+        font-weight: 700;
+        line-height: 52px;
+        margin: 0px 0px 18px;
+      }
+
+      main article p {
+        color: #aaa;
+        font-family: Poppins;
+        line-height: 28px;
+        margin: 0px 0px 32px;
+      }
+
+      #b1 {
+        background-color: #c0392b;
+        border-radius: 8px;
+        color: #fff;
+        font-family: Poppins;
+        font-weight: 600;
+        padding: 13px 30px;
+        outline: none;
+        border: none;
+      }
+
+      #b1:hover {
+        background-color: #a93226;
+        cursor: pointer;
+        transition: 0.3s ease;
+        outline: none;
+      }
+
+      #b2:hover {
+        background-color: #f39c12;
+        color: #2c1500;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+
+      #b2 {
+        border-color: #f39c12;
+        border-radius: 8px;
+        border-style: solid;
+        border-width: 1.6px;
+        color: #f39c12;
+        font-family: Poppins;
+        font-weight: 600;
+        padding: 13px 30px;
+      }
+
+      aside img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        object-fit: cover;
+      }
+
+      .section-bar {
+        width: 100%;
+        height: 125px;
+        background-color: #da1d08;
+        color: #ddd;
+        padding: 28px 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .section-bar-content {
+        padding: 0px 100px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      h1 span {
+        color: orange;
+      }
+      .menu-section {
+        width: 100%;
+        padding: 80px 0px;
+        display: flex;
+        justify-content: center;
+      }
+      .menu-container {
+        width: 80%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+      }
+      .card-content {
+        padding: 20px;
+        color: white;
+      }
+      .price-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+        color: #f39c12;
+        font-size: 17.6px;
+        font-weight: 700;
+      }
+
+      .card {
+        background: #3a1c05;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: 0.3s ease;
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+      }
+
+      .menu-container img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+      }
+      .bt {
+        background-color: #bd382a;
+        border-radius: 6px;
+        color: #fff;
+        font-family: Poppins;
+        font-size: 13.6px;
+        font-weight: 600;
+        padding: 7px 16px;
+        text-align: center;
+      }
+      .bt:hover {
+        background-color: #a93226;
+      }
+      .label {
+        /* background-color: #0ff3; */
+        background-color: #271303;
+        color: #f39c12;
+        font-family: Poppins;
+        font-size: 13.6px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-align: center;
+        /* gap: 10px; */
+        padding: 10px;
+        margin-top: 20px;
+      }
+
+      .dish {
+        /* background-color: #0ff3; */
+        background-color: #271303;
+        color: #fff;
+        font-family: Poppins;
+        font-size: 32px;
+        font-weight: 700;
+        /* margin: 6px 0px 0px; */
+        margin-top: 10px;
+        padding: 10px;
+        text-align: center;
+      }
+      .tag {
+        background-color: #c0392b26;
+        border-color: #c0392b4d;
+        border-radius: 4px;
+        border-style: solid;
+        border-width: 0.8px;
+        color: rgb(59, 234, 59);
+        display: inline-block;
+        font-size: 11.52px;
+        font-weight: 600;
+        margin: 0px 0px 8px;
+        padding: 3px 10px;
+      }
+      .Ntag {
+        background-color: #c0392b26;
+        border-color: #c0392b4d;
+        border-radius: 4px;
+        border-style: solid;
+        border-width: 0.8px;
+        color: #e74c3c;
+        display: inline-block;
+        font-size: 11.52px;
+        font-weight: 600;
+        margin: 0px 0px 8px;
+        padding: 3px 10px;
+      }
+      .about-section {
+        width: 100%;
+        padding: 80px 0;
+        display: flex;
+        justify-content: center;
+      }
+      .about-container {
+        align-items: center;
+        color: #ddd;
+        display: flex;
+        gap: 65px;
+        margin: auto;
+        width: 80%;
+      }
+      .about-image {
+        width: 40%;
+      }
+      .about-image img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 12px;
+      }
+      .about-section {
+        width: 100%;
+        padding: 80px 0;
+        display: flex;
+        justify-content: center;
+      }
+      .about-content {
+        width: 40%;
+        color: white;
+        background-color: #2c1500;
+        justify-content: center;
+      }
+      .about-content span {
+        color: #f39c12;
+        font-size: 14px;
+        letter-spacing: 2px;
+        font-weight: 600;
+      }
+      .about-content h2 {
+        font-size: 36px;
+        margin: 10px 0 20px;
+      }
+      .about-content p {
+        color: #aaa;
+        margin-bottom: 15px;
+        line-height: 26px;
+      }
+      .features {
+        list-style: none;
+        margin: 20px 0;
+      }
+
+      .features li {
+        margin-bottom: 10px;
+        color: #ddd;
+      }
+      .about-content button {
+        background: #c0392b;
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .about-content button:hover {
+        background: #a93226;
+      }
+      .review-section {
+        margin-top: 200px;
+        width: 100%;
+        padding: 80px 0;
+        text-align: center;
+        margin-top: 40px;
+      }
+      .customer-review p {
+        color: #f39c12;
+        font-size: 13.6px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-align: center;
+      }
+      .customer-review h2 {
+        color: #fff;
+        font-size: 32px;
+        font-weight: 700;
+        margin: 6px 0px 0px;
+        text-align: center;
+      }
+      .reviews {
+        width: 80%;
+        margin: auto;
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+      }
+
+      .review-card {
+        background: #3a1c05;
+        padding: 25px;
+        border-radius: 12px;
+        color: #ccc;
+        text-align: left;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        border-left: 5px solid rgb(221, 54, 54);
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .review-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+      }
+      .star {
+        color: #f39c12;
+        margin: 0px 0px 12px;
+      }
+      .review-card p {
+        color: #999;
+        font-size: 14.08px;
+        line-height: 23.232px;
+        margin: 0px 0px 18px;
+        flex-grow: 1;
+      }
+      .review-card span {
+        color: #666;
+        display: inline;
+        font-size: 12.48px;
+      }
+      .review-user {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 10px;
+      }
+
+      .review-user img {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #f39c12;
+      }
+      .user-info {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .user-info strong {
+        color: white;
+        font-size: 16px;
+      }
+
+      .user-info span {
+        color: #777;
+        font-size: 13px;
+      }
+      .contact-section {
+        width: 80%;
+        margin: 60px auto;
+        /* display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 80px; */
+      }
+      .contact-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 40px;
+      }
+      .contact-heading {
+        text-align: center;
+        margin-bottom: 40px;
+        width: 100%;
+      }
+
+      .contact-heading p {
+        color: #f39c12;
+        font-size: 14px;
+        letter-spacing: 2px;
+        font-weight: 600;
+      }
+
+      .contact-heading h2 {
+        color: white;
+        font-size: 36px;
+        margin-top: 10px;
+      }
+      .contact-info {
+        width: 45%;
+      }
+      .contact-info h3 {
+        color: #fff;
+        font-size: 28.8px;
+        font-weight: 700;
+        margin: 30px;
+      }
+      .contact-info p {
+        color: #999;
+        font-size: 14.4px;
+        line-height: 23.76px;
+        margin-bottom: 18px;
+        padding: 5px;
+      }
+      .contact-form {
+        width: 45%;
+      }
+
+      .form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        background: #3a1c05;
+        padding: 30px;
+        border-radius: 12px;
+      }
+
+      .form input,
+      .form textarea {
+        width: 100%;
+        padding: 16px;
+        background: #2a1200;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        font-size: 15px;
+      }
+      .form input::placeholder,
+      .form textarea::placeholder {
+        color: #888;
+        /* border:1px solid #4a2a0a */
+      }
+      .form textarea {
+        height: 120px;
+        resize: none;
+      }
+      .form button {
+        width: 100%;
+        background: #c0392b;
+        color: white;
+        border: none;
+        padding: 16px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .footer {
+        width: 100%;
+        height: auto;
+        background-color: #0d0500;
+        color: #ddd;
+        padding: 50px 30px 25px;
+      }
+      /* .footer-container {
+        width: 80%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        justify-content: space-between;
+        gap: 60px;
+      } */
+      .footer-container {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 80px;
+      }
+      .footer-brand {
+        width: 40%;
+        color: #f39c12;
+        display: inline-block;
+        font-size: 25.6px;
+        font-weight: 700;
+        margin: 0px 0px 12px;
+      }
+      .footer-brand span {
+        color: #fff;
+      }
+      .footer-brand p {
+        color: #555;
+        font-size: 14px;
+        line-height: 23.8px;
+      }
+      .footer-col {
+        width: 20%;
+        display: flex;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+        flex-direction: column;
+      }
+      .footer-col h3 {
+        color: #f39c12;
+        margin-bottom: 10px;
+        font-size: 16px;
+      }
+      .footer-col ul {
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+      }
+      .footer-col ul li {
+        margin-bottom: 10px;
+      }
+      .footer-col ul li a {
+        text-decoration: none;
+        color: #aaa;
+      }
+      .footer-col ul li a:hover {
+        color: #f39c12;
+        transition: 0.3s ease;
+      }
+      .footer-bottom {
+        text-align: center;
+        margin-top: 40px;
+        border-top: 1px solid #2a1200;
+        padding-top: 20px;
+        color: #777;
+        font-size: 14px;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      @media screen and (max-width: 800px) {
+        .header-section header {
+          width: 100%;
+        }
+
+        .header-section header aside {
+          width: 55%;
+          /* border: 1px solid white; */
+        }
+
+        header nav {
+          display: none;
+        }
+
+        header .hamburger-section {
+          width: 20%;
+          /* border: 1px solid white; */
+        }
+
+        header .hamburger-section svg {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="header-section">
+      <header>
+        <aside><span>Spice</span> <span>Garden</span></aside>
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <button>Order Now</button>
+        </nav>
+        <!-- hamburger section initially it will be hidden -->
+        <div class="hamburger-section">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            fill="#000000"
+            viewBox="0 0 256 256"
+          >
+            <path
+              d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"
+            ></path>
+          </svg>
+        </div>
+      </header>
+    </section>
+    <section class="hero-section" id="home">
+      <main>
+        <article>
+          <span>🍛 Authentic Flavors Since 2008</span>
+          <h1>
+            Experience the <span> Real Taste</span> <br />
+            of India
+          </h1>
+          <p>
+            From slow-cooked curries to tandoor-fresh breads — every dish is
+            crafted with traditional recipes, hand-ground spices, and a whole
+            lot of love.
+          </p>
+          <div class="button-container">
+            <button id="b1">View Our Menu</button>
+            <button id="b2">Book a Table</button>
+          </div>
+        </article>
+        <aside>
+          <img
+            src="https://aauris.com/wp-content/uploads/2025/09/10-Must-Try-Continental-Food-items-to-taste-in-Kolkata.png"
+            alt=""
+          />
+        </aside>
+      </main>
+    </section>
+    <div class="section-bar">
+      <div class="section-bar-content">
+        <h3>500+</h3>
+        <p>Happy Guests Daily</p>
+      </div>
+
+      <div class="section-bar-content">
+        <h3>50+</h3>
+        <p>Dishes on Menu</p>
+      </div>
+
+      <div class="section-bar-content">
+        <h3>15+</h3>
+        <p>Years of Experience</p>
+      </div>
+
+      <div class="section-bar-content">
+        <h3>4.9 ⭐</h3>
+        <p>Average Rating</p>
+      </div>
+    </div>
+    <div class="label">
+      <p>OUR SPECIALIST</p>
+    </div>
+    <div class="dish">
+      <h2>Popular Dishes</h2>
+    </div>
+
+    <section class="menu-section" id="menu">
+      <div class="menu-container">
+        <div class="card">
+          <img
+            src="https://www.licious.in/blog/wp-content/uploads/2020/10/butter-chicken--600x600.jpg"
+            alt="Butter chicken"
+          />
+          <div class="card-content">
+            <span class="Ntag">Non-veg</span>
+            <h3>Butter chicken</h3>
+            <p>
+              Tender chicken in a rich, creamy tomato sauce with aromatic
+              spices.
+            </p>
+
+            <div class="price-section">
+              <span class="price">₹280</span>
+              <button class="bt">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://www.funfoodfrolic.com/wp-content/uploads/2023/04/Dal-Makhani-Blog.jpg"
+            alt="Dal Makhani"
+          />
+          <div class="card-content">
+            <span class="tag">Veg</span>
+            <h3>Dal Makhani</h3>
+            <p>
+              Slow-cooked black lentils with butter and cream — a true comfort
+              classic.
+            </p>
+
+            <div class="price-section">
+              <span class="price">₹220</span>
+              <button class="bt">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYAud3G3kRsjZe3N5xs6NHI4uw-wx0BqJb1Q&s"
+            alt="Paneer Tikka"
+          />
+          <div class="card-content">
+            <span class="tag">Veg</span>
+            <h3>Paneer Tikka</h3>
+            <p>
+              Marinated cottage cheese grilled to perfection in our tandoor
+              oven.
+            </p>
+
+            <div class="price-section">
+              <span class="price">₹280</span>
+              <button class="bt">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://ministryofcurry.com/wp-content/uploads/2024/06/chicken-biryani-5.jpg"
+            alt="Chicken Biryani"
+          />
+          <div class="card-content">
+            <span class="Ntag">Non-Veg</span>
+            <h3>Chicken Biryani</h3>
+            <p>
+              Fragrant basmati rice layered with spiced chicken and caramelized
+              onions.
+            </p>
+
+            <div class="price-section">
+              <span class="price">₹380</span>
+              <button class="bt">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://hostthetoast.com/wp-content/uploads/2018/08/Homemade-Garlic-Naan-3.jpg"
+            alt="Garlic Naan"
+          />
+          <div class="card-content">
+            <span class="tag">Veg</span>
+            <h3>Garlic Naan</h3>
+            <p>
+              Soft fluffy bread baked in tandoor, topped with fresh garlic
+              butter
+            </p>
+
+            <div class="price-section">
+              <span class="price">₹80</span>
+              <button class="bt">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://pipingpotcurry.com/wp-content/uploads/2023/12/Gulab-Jamun-Recipe-Piping-Pot-Curry.jpg"
+            alt="Gulab Jamun"
+          />
+          <div class="card-content">
+            <span class="tag">Veg</span>
+            <h3>Gulab Jamun</h3>
+            <p>
+              Soft milk-solid dumplings soaked in rose-flavored sugar syrup.
+            </p>
+
+            <div class="price-section">
+              <span class="price">₹120</span>
+              <button class="bt">+ Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="about-container">
+        <div class="about-image">
+          <img
+            src="https://dineout-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/DINEOUT_ALL_RESTAURANTS/IMAGES/RESTAURANT_IMAGE_SERVICE/2024/8/10/bfaf5fe8-7eaa-4dc4-b0fa-bddb63ac20dc_20240810T140015855.jpg"
+            alt=""
+          />
+        </div>
+
+        <div class="about-content">
+          <span>OUR STORY</span>
+
+          <h2>Serving Authentic Flavors Since 2008</h2>
+
+          <p>
+            SpiceGarden was started by Chef Ramesh with a dream to bring real,
+            homestyle Indian cooking to every table. What started as 10 seats
+            has grown into a city favorite.
+          </p>
+
+          <p>
+            Every dish is cooked fresh daily with traditional recipes passed
+            down through generations, using hand-ground spices and local
+            ingredients.
+          </p>
+
+          <ul class="features">
+            <li>✔️100% fresh ingredients sourced locally every morning</li>
+            <li>✔️No artificial colors or preservatives used</li>
+            <li>✔️Vegetarian and vegan-friendly options available</li>
+            <li>✔️Cozy family-friendly dining atmosphere</li>
+          </ul>
+
+          <button>Explore Our Menu</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="review-section">
+      <div class="customer-review">
+        <p>CUSTOMER REVIEWS</p>
+        <h2>What Our Guests Say</h2>
+      </div>
+
+      <div class="reviews">
+        <div class="review-card">
+          <div class="star">★★★★★</div>
+          <p>
+            "The butter chicken here is out of this world! Best I've had in
+            Ahmedabad. Generous portions and amazing flavors."
+          </p>
+          <div class="review-user">
+            <img
+              src="https://gratisography.com/wp-content/uploads/2025/05/gratisography-moon-robot-800x525.jpg"
+              alt="Amit Desai"
+            />
+            <div class="user-info">
+              <strong>Amit Desai</strong>
+              <span>Regular Customer</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="star">★★★★★</div>
+          <p>
+            "We celebrated our anniversary here. The food was divine, service
+            was warm, and the biryani is simply unforgettable."
+          </p>
+          <div class="review-user">
+            <img
+              src="https://img.freepik.com/free-photo/woman-beach-with-her-baby-enjoying-sunset_52683-144131.jpg?size=626&ext=jpg"
+              alt="Amit Desai"
+            />
+            <div class="user-info">
+              <strong>Kavya Reddy</strong>
+              <span>First visit</span>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="star">★★★★★</div>
+          <p>
+            "Order every week online. Delivery is always on time and food tastes
+            like it was just cooked. Highly recommended!"
+          </p>
+          <div class="review-user">
+            <img
+              src="https://play-lh.googleusercontent.com/7Ac5TgaL15Ra4bvFVHJKCdJp4qvnL4djZj5bKc6RN-MZjzrvkeHbJytek0NPTSdZcp8"
+              alt="Amit Desai"
+            />
+            <div class="user-info">
+              <strong>Vikram Shah</strong>
+              <span>Online order</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-heading">
+        <p>GET IN TOUCH</p>
+        <h2>Book a Table or Contact Us</h2>
+      </div>
+
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3>Visit Us</h3>
+
+          <p style="display: flex; gap: 10px">
+            <span>📍</span>
+            <span>
+              12, MG Road, Navrangpura,<br />
+              Ahmedabad, Gujarat – 380009
+            </span>
+          </p>
+
+          <p style="display: flex; gap: 10px">
+            <span>⏰</span>
+            <span>
+              Mon – Sun: 11:00 AM – 11:00 PM<br />
+              Kitchen closes at 10:30 PM
+            </span>
+          </p>
+
+          <p style="display: flex; gap: 10px">
+            <span>📞</span>
+            <span>+91 98765 43210</span>
+          </p>
+
+          <p style="display: flex; gap: 10px">
+            <span>✉️</span>
+            <span>hello@spicegarden.in</span>
+          </p>
+        </div>
+
+        <div class="contact-form">
+          <form class="form">
+            <input type="text" placeholder="Your Full Name" />
+            <input type="email" placeholder="Email Address" />
+            <input type="tel" placeholder="Phone Number" />
+            <input type="date" />
+
+            <textarea
+              placeholder="Number of guests or special requests..."
+            ></textarea>
+
+            <button type="submit">Book My Table</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <h3>Spice <span>Garden</span></h3>
+          <p>
+            Bringing authentic Indian flavors to your table since 2008. Made
+            with love, tradition, and the finest spices.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h3>QUICK LINKS</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>OUR MENU</h3>
+          <ul>
+            <li><a href="#menu">Starters</a></li>
+            <li><a href="#menu">Main Course</a></li>
+            <li><a href="#menu">Breads</a></li>
+            <li><a href="#menu">Desserts</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          © 2026 SpiceGarden Restaurant. All rights reserved. Made with ❤️ in
+          Ahmedabad.
+        </p>
+      </div>
+    </section>
+  </body>
+</html>
